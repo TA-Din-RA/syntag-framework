@@ -27,7 +27,6 @@ def parse_markdown_to_rdf(markdown_content):
     blocks = re.split(r'\n\s*[-–]+\s*\n', markdown_content)
 
     for block in blocks:
-        # --- 1. PARSING NODES ---
         if "### Node ID:" in block:
             node_id, label, node_type = None, None, None
             for line in block.split('\n'):
@@ -59,20 +58,17 @@ def parse_markdown_to_rdf(markdown_content):
 
     rdf_lines = []
     
-    # prefixes of RDF
     rdf_lines.append("@prefix : <http://example.org/> .")
     rdf_lines.append("@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .")
     rdf_lines.append("@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .")
     rdf_lines.append("@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n")
 
-    # convert edges
     rdf_lines.append("# Triples")
     for source, predicates in edges_dict.items():
         for predicate, targets in predicates.items():
             targets_str = ", ".join([f":{t}" for t in sorted(list(targets))])
             rdf_lines.append(f":{source} :{predicate} {targets_str} .")
 
-    # Node Definitions (Non-Entity)
     rdf_lines.append("\n# Definisi Node Non-Entity")
     for node_id, data in nodes.items():
         if data['type'].lower() != 'entity':

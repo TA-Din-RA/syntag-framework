@@ -1,12 +1,3 @@
-"""
-Synthetic Data Generator - Groq API (GPT-OSS-120b)
-======================================================================
-Generate 1000 data per text type:
-  1. News
-  2. Abstract
-  3. Tweet
-"""
-
 import os
 import json
 import time
@@ -36,8 +27,6 @@ TARGET_PER_TYPE = 1070
 BATCH_SIZE      = 5      
 OUTPUT_DIR      = Path("synthetic_output")
 CHECKPOINT_DIR  = OUTPUT_DIR / "checkpoints"
-
-# Rate limit settings (Groq free tier ~30 req/menit, ~14400 token/menit)
 MAX_RETRIES     = 8
 BASE_DELAY      = 2.0      
 MAX_DELAY       = 120.0     
@@ -254,7 +243,7 @@ PROMPTS = {
 # ─────────────────────────────────────────────
 
 def load_checkpoint(data_type: str) -> list:
-    """Load succefully generated synthetic data into JSON file"""
+    """Load last saved successful batch"""
     ckpt_file = CHECKPOINT_DIR / f"{data_type}_checkpoint.json"
     if ckpt_file.exists():
         with open(ckpt_file, "r", encoding="utf-8") as f:
@@ -273,7 +262,7 @@ def save_checkpoint(data_type: str, data: list):
 
 def call_groq_api(system_prompt: str, user_prompt: str) -> str:
     """
-    Call Groq API with exponential backoff + jitter for rate limit
+    Call Groq API with exponential backoff for rate limit
 
     Return: response model
     """
@@ -338,7 +327,6 @@ def parse_json_response(raw: str) -> list:
     Parse JSON from model's response.
     Handle cases where model generate additional text beside JSON format
     """
-    # Cari blok JSON array [...]
     start = raw.find("[")
     end   = raw.rfind("]")
     if start == -1 or end == -1:
@@ -354,27 +342,25 @@ def build_user_prompt(data_type: str, batch_n: int, start_id: int, batch_index: 
     template = PROMPTS[data_type]["user_template"]
 
     if data_type == "berita":
-        # Rotate topik berdasarkan index batch supaya beragam
         topik = TOPIK_BERITA[batch_index % len(TOPIK_BERITA)]
         return template.format(
             n=batch_n,
             topik=topik,
-            start_id=start_id  # untuk preview format di prompt
+            start_id=start_id
         )
     elif data_type == "abstrak":
-        # Rotate topik berdasarkan index batch supaya beragam
         topik = TOPIK_ABSTRAK[batch_index % len(TOPIK_ABSTRAK)]
         return template.format(
             n=batch_n,
             topik=topik,
-            start_id=start_id  # untuk preview format di prompt
+            start_id=start_id
         )
     else:
         topik = TOPIK_TWEET[batch_index % len(TOPIK_TWEET)]
         return template.format(
             n=batch_n,
             topik=topik,
-            start_id=start_id  # untuk preview format di prompt
+            start_id=start_id
         )
 
 
@@ -386,7 +372,7 @@ def generate_data(data_type: str, target: int = TARGET_PER_TYPE) -> list:
     prompt_cfg = PROMPTS[data_type]
     results    = load_checkpoint(data_type)
     start_id   = len(results) + 1
-    batch_index = len(results) // BATCH_SIZE  # untuk rotasi topik
+    batch_index = len(results) // BATCH_SIZE
 
     failed_batches = 0
 
@@ -407,7 +393,6 @@ def generate_data(data_type: str, target: int = TARGET_PER_TYPE) -> list:
                 raw   = call_groq_api(prompt_cfg["system"], user_prompt)
                 batch = parse_json_response(raw)
 
-                # Re-assign ID supaya urut & tambahkan topik jika berita
                 for i, item in enumerate(batch):
                     item["id"] = start_id + i
 
@@ -441,7 +426,6 @@ def generate_data(data_type: str, target: int = TARGET_PER_TYPE) -> list:
                 log.info(f"  Checkpoint tersimpan: {len(results)} data. Jalankan ulang untuk melanjutkan.")
                 break
 
-            # Delay antar request normal untuk menghindari rate limit
             if len(results) < target:
                 time.sleep(REQUEST_DELAY)
 
