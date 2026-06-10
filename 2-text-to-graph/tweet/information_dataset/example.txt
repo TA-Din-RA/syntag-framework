@@ -1,0 +1,21 @@
+[Entitas]
+- Aku
+- Racial Bullying/tindakan rasisme
+- US
+- Orang Indonesia
+- Orang Bali
+
+
+[Relasi Antar Entitas]
+- Aku, mendapatkan, racial bullying
+- Racial bullying, terjadi di, US
+- Racial bullying, dilakukan oleh, orang Indonesia
+- Racial bullying, dilakukan oleh, orang Bali
+- Aku, tidak menjelekkan, orang Bali
+
+
+[Topik]
+Aku mengalami racial bullying oleh sesama orang Indonesia, secara spesifik orang Bali
+
+[Sentimen]
+Negatif: penulis tidak menyangka akan mendapatkan perilaku rasisme oleh sesama orang indonesia

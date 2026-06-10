@@ -1,0 +1,24 @@
+@prefix : <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Triples
+:Unggahan :mengenai :Aku .
+:Unggahan :memilikitopik :Topik .
+:Unggahan :memilikisentimen :Negatif .
+:Negatif :memilikiAlasan :Penulis_Tidak_Menyangka_Akan_Mendapatkan_Perilaku_Rasisme_Oleh_Sesama_Orang_Indonesia .
+:Aku :mendapatkan :Racial_Bullying .
+:Aku :tidakMenjelekkan :Orang_Bali .
+:Racial_Bullying :terjadiDi :Us .
+:Racial_Bullying :dilakukanOleh :Orang_Bali, :Orang_Indonesia .
+
+# Definisi Node Non-Entity (Problem, Topic, Methodology, DataSource, EvaluationIndicator, Result, dll)
+:Topik rdf:type :Topic ;
+    rdfs:label "Aku mengalami racial bullying oleh sesama orang Indonesia, secara spesifik orang Bali" .
+
+:Negatif rdf:type :Sentiment ;
+    rdfs:label "Negatif" .
+
+:Penulis_Tidak_Menyangka_Akan_Mendapatkan_Perilaku_Rasisme_Oleh_Sesama_Orang_Indonesia rdf:type :Sentiment ;
+    rdfs:label "penulis tidak menyangka akan mendapatkan perilaku rasisme oleh sesama orang indonesia" .

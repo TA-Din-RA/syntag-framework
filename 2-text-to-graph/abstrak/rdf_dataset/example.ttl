@@ -1,0 +1,58 @@
+@prefix : <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Triples
+:Penelitian :memilikiMasalah :Masalah_Penelitian .
+:Penelitian :bertopik :Topik_Penelitian .
+:Penelitian :menggunakanMetodologi :Metodologi_Penelitian .
+:Penelitian :menggunakanSumberData :Sumber_Data_Penelitian .
+:Penelitian :menghasilkan :Hasil_Penelitian_1, :Hasil_Penelitian_2, :Hasil_Penelitian_3, :Hasil_Penelitian_4 .
+:Penelitian :bertujuanMengkaji :Pengaruh_Teknologi_Digital_Terhadap_Literasi_Bahasa_Indonesia .
+:Penelitian :memetakan :Dampak_Negatif, :Dampak_Positif, :Tantangan_Literasi_Di_Era_Digital .
+:Penelitian :menggunakan :Pendekatan_Kualitatif, :Studi_Literatur .
+:Teknologi_Digital :mengubah :Literasi_Bahasa_Indonesia .
+:Teknologi_Digital :berdampakPositifTerhadap :Keterampilan_Membaca_Dan_Menulis, :Penguatan_Literasi, :Peningkatan_Minat_Baca .
+:Teknologi_Digital :memunculkan :Alih_Kode_Berlebihan, :Bahasa_Gaul, :Bahasa_Informal .
+:Literasi_Bahasa_Indonesia :dalamRanah :Pendidikan_Dan_Komunikasi_Sosial .
+:Literasi_Bahasa_Indonesia :mencakup :Kemampuan_Memahami_Mengevaluasi_Dan_Memproduksi_Teks_Digital, :Kemampuan_Membaca_Dan_Menulis_Teks_Cetak .
+:Literasi_Bahasa_Indonesia :menghadapi :Tantangan_Kompleks .
+:Data :bersumberDari :Artikel_Jurnal_Ilmiah_Nasional .
+:Data :dianalisisDengan :Analisis_Deskriptif_Kualitatif .
+:Penguatan_Literasi :melalui :Pemanfaatan_Media_Dan_Platform_Digital .
+:Penguatan_Literasi :diarahkanPada :Strategi_Pendidikan_Dan_Kebijakan_Bahasa .
+:Pemanfaatan_Media_Dan_Platform_Digital :digunakanDalam :Pembelajaran_Bahasa_Indonesia .
+:Bahasa_Informal :berpotensiMelemahkan :Kaidah_Bahasa_Indonesia_Baku .
+:Bahasa_Gaul :berpotensiMelemahkan :Kaidah_Bahasa_Indonesia_Baku .
+:Alih_Kode_Berlebihan :berpotensiMelemahkan :Kaidah_Bahasa_Indonesia_Baku .
+:Penyebaran_Informasi_Hoaks :termasuk :Tantangan_Kompleks .
+:Lemahnya_Etika_Komunikasi_Digital :termasuk :Tantangan_Kompleks .
+:Ketimpangan_Akses_Teknologi :termasuk :Tantangan_Kompleks .
+:Strategi_Pendidikan_Dan_Kebijakan_Bahasa :membantuMenyeimbangkan :Pemanfaatan_Teknologi .
+:Strategi_Pendidikan_Dan_Kebijakan_Bahasa :bertujuanMenjaga :Kaidah_Bahasa_Indonesia_Baku .
+
+# Definisi Node Non-Entity (Problem, Topic, Methodology, DataSource, EvaluationIndicator, Result, dll)
+:Masalah_Penelitian rdf:type :Problem ;
+    rdfs:label "Perubahan praktik literasi bahasa Indonesia akibat perkembangan teknologi digital yang menimbulkan dampak positif, negatif, dan berbagai tantangan literasi." .
+
+:Topik_Penelitian rdf:type :Topic ;
+    rdfs:label "Pendidikan bahasa / Literasi digital" .
+
+:Metodologi_Penelitian rdf:type :Methodology ;
+    rdfs:label "Pendekatan kualitatif dengan metode studi literatur dan analisis deskriptif kualitatif." .
+
+:Sumber_Data_Penelitian rdf:type :DataSource ;
+    rdfs:label "Artikel jurnal ilmiah nasional yang relevan." .
+
+:Hasil_Penelitian_1 rdf:type :Result ;
+    rdfs:label "Teknologi digital meningkatkan minat baca, keterampilan membaca dan menulis, serta literasi multimodal." .
+
+:Hasil_Penelitian_2 rdf:type :Result ;
+    rdfs:label "Teknologi digital memunculkan penggunaan bahasa informal, bahasa gaul, dan alih kode berlebihan yang dapat melemahkan kaidah bahasa baku." .
+
+:Hasil_Penelitian_3 rdf:type :Result ;
+    rdfs:label "Tantangan literasi meliputi rendahnya minat baca, penyebaran hoaks, lemahnya etika komunikasi digital, dan ketimpangan akses teknologi." .
+
+:Hasil_Penelitian_4 rdf:type :Result ;
+    rdfs:label "Diperlukan strategi pendidikan dan kebijakan bahasa yang integratif, adaptif, dan berkelanjutan untuk menyeimbangkan teknologi dan kaidah bahasa baku." .

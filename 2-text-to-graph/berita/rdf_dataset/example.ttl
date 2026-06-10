@@ -1,0 +1,65 @@
+@prefix : <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Triples
+:Kutipan_1 :pernyataan :Meutya_Hafid .
+:Kutipan_2 :pernyataan :Presiden_Joko_Widodo .
+:What :berhubunganDengan :Istana_Negara_Jakarta, :Jenderal_Agus_Subiyanto, :Jenderal_Dudung_Abdurachman, :Kepala_Staf_Angkatan_Darat_Ksad, :Ketua_Komisi_I_Dpr_Ri_Meutya_Hafid, :Meutya_Hafid, :Panglima_Komando_Cadangan_Strategis_Angkatan_Darat_Pangkostrad_Letjen_Maruli_Simanjuntak, :Presiden_Joko_Widodo, :Presiden_Joko_Widodo_Jokowi .
+:What :kapan :When .
+:What :diMana :Where .
+:What :mengapa :Why .
+:What :bagaimana :How .
+:What :siapa :Who .
+:Who :terkait :Jenderal_Agus_Subiyanto, :Jenderal_Dudung_Abdurachman, :Meutya_Hafid, :Presiden_Joko_Widodo .
+:How :dimulaiDengan :Kronologi_1 .
+:Kronologi_1 :dilanjutkanDengan :Kronologi_2 .
+:Kronologi_2 :dilanjutkanDengan :Kronologi_3 .
+:Kronologi_3 :berakhirDengan :Kronologi_4 .
+:Presiden_Joko_Widodo :melantik :Ksad .
+:Meutya_Hafid :mengkonfirmasiPelantikan :Ksad_Oleh_Jokowi .
+:Letjen_Maruli_Simanjuntak :berpeluangMenjadi :Ksad .
+:Jenderal_Agus_Subiyanto :diusulkanMenjadi :Panglima_Tni_Oleh_Jokowi .
+:Jenderal_Dudung_Abdurachman :digantikanOleh :Jenderal_Agus_Subiyanto_Sebagai_Ksad .
+:Ksad :bagianDari :Angkatan_Darat_Tni .
+
+# Definisi Node Non-Entity (Problem, Topic, Methodology, DataSource, EvaluationIndicator, Result, dll)
+:What rdf:type :5W1H ;
+    rdfs:label "Pelantikan Kepala Staf Angkatan Darat (KSAD)" .
+
+:Who rdf:type :5W1H ;
+    rdfs:label "Presiden Joko Widodo, Meutya Hafid, Letjen Maruli Simanjuntak, Jenderal Agus Subiyanto, Jenderal Dudung Abdurachman" .
+
+:When rdf:type :5W1H ;
+    rdfs:label "Rabu, 29 November" .
+
+:Where rdf:type :5W1H ;
+    rdfs:label "Istana Negara, Jakarta" .
+
+:Why rdf:type :5W1H ;
+    rdfs:label "Pengisian posisi KSAD yang kosong" .
+
+:How rdf:type :5W1H ;
+    rdfs:label "Pelantikan oleh Presiden Joko Widodo" .
+
+:Sentimen_Positif rdf:type :Sentiment ;
+    rdfs:label "Positif: terkait pelantikan KSAD baru oleh Presiden Jokowi" .
+
+:Kutipan_1 rdf:type :Quotes ;
+    rdfs:label "\"Ya betul (Jokowi lantik KSAD),\"" .
+
+:Kutipan_2 rdf:type :Quotes ;
+    rdfs:label "\"Salah satu kandidat,\"" .
+
+:Kronologi_1 rdf:type :Chronology ;
+    rdfs:label "Posisi KSAD kosong setelah Jenderal Agus Subiyanto dilantik menjadi Panglima TNI." .
+
+:Kronologi_2 rdf:type :Chronology ;
+    rdfs:label "Letjen Maruli Simanjuntak disebut sebagai salah satu kandidat KSAD oleh Presiden Jokowi." .
+
+:Kronologi_3 rdf:type :Chronology ;
+    rdfs:label "Ketua Komisi I DPR RI Meutya Hafid mengkonfirmasi bahwa Presiden Jokowi akan melantik KSAD." .
+
+:Kronologi_4 rdf:type :Chronology ;
+    rdfs:label "Pelantikan KSAD dijadwalkan pada Rabu, 29 November di Istana Negara, Jakarta." .

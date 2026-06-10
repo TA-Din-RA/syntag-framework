@@ -1,0 +1,171 @@
+[Entitas]
+
+- Penelitian
+
+- Teknologi digital
+
+- Literasi bahasa Indonesia
+
+- Pendidikan dan komunikasi sosial
+
+- Literasi
+
+- Kemampuan membaca dan menulis teks cetak
+
+- Kemampuan memahami, mengevaluasi, dan memproduksi teks digital
+
+- Pengaruh teknologi digital terhadap literasi bahasa Indonesia
+
+- Dampak positif
+
+- Dampak negatif
+
+- Tantangan literasi di era digital
+
+- Penelitian terdahulu
+
+- Pendekatan kualitatif
+
+- Studi literatur
+
+- Artikel jurnal ilmiah nasional
+
+- Analisis deskriptif kualitatif
+
+- Minat baca
+
+- Keterampilan membaca dan menulis
+
+- Penguatan literasi
+
+- Pemanfaatan media dan platform digital
+
+- Pembelajaran bahasa Indonesia
+
+- Bahasa informal
+
+- Bahasa gaul
+
+- Alih kode berlebihan
+
+- Kaidah bahasa Indonesia baku
+
+- Tantangan kompleks
+
+- Rendahnya minat baca
+
+- Penyebaran informasi hoaks
+
+- Lemahnya etika komunikasi digital
+
+- Ketimpangan akses teknologi
+
+- Strategi pendidikan dan kebijakan bahasa
+
+- Pemanfaatan teknologi
+
+
+
+[Relasi Antar Entitas]
+
+- Teknologi digital, mengubah, literasi bahasa Indonesia
+
+- Literasi bahasa Indonesia, dalam ranah, pendidikan dan komunikasi sosial
+
+- Literasi bahasa Indonesia, mencakup, kemampuan membaca dan menulis teks cetak
+
+- Literasi bahasa Indonesia, mencakup, kemampuan memahami, mengevaluasi, dan memproduksi teks digital
+
+- Penelitian, bertujuan mengkaji, pengaruh teknologi digital terhadap literasi bahasa Indonesia
+
+- Penelitian, memetakan, dampak positif
+
+- Penelitian, memetakan, dampak negatif
+
+- Penelitian, memetakan, tantangan literasi di era digital
+
+- Penelitian, menggunakan, pendekatan kualitatif
+
+- Penelitian, menggunakan, studi literatur
+
+- Data, bersumber dari, artikel jurnal ilmiah nasional
+
+- Data, dianalisis dengan, analisis deskriptif kualitatif
+
+- Teknologi digital, berdampak positif terhadap, peningkatan minat baca
+
+- Teknologi digital, berdampak positif terhadap, keterampilan membaca dan menulis
+
+- Teknologi digital, berdampak positif terhadap, penguatan literasi
+
+- Penguatan literasi, melalui, pemanfaatan media dan platform digital
+
+- Pemanfaatan media dan platform digital, digunakan dalam, pembelajaran bahasa Indonesia
+
+- Teknologi digital, memunculkan, bahasa informal
+
+- Teknologi digital, memunculkan, bahasa gaul
+
+- Teknologi digital, memunculkan, alih kode berlebihan
+
+- Bahasa informal, berpotensi melemahkan, kaidah bahasa Indonesia baku
+
+- Bahasa gaul, berpotensi melemahkan, kaidah bahasa Indonesia baku
+
+- Alih kode berlebihan, berpotensi melemahkan, kaidah bahasa Indonesia baku
+
+- Literasi bahasa Indonesia, menghadapi, tantangan kompleks
+
+- Penyebaran informasi hoaks, termasuk, tantangan kompleks
+
+- Lemahnya etika komunikasi digital, termasuk, tantangan kompleks
+
+- Ketimpangan akses teknologi, termasuk, tantangan kompleks
+
+- Penguatan literasi, diarahkan pada, strategi pendidikan dan kebijakan bahasa
+
+- Strategi pendidikan dan kebijakan bahasa, membantu menyeimbangkan, pemanfaatan teknologi
+
+- Strategi pendidikan dan kebijakan bahasa, bertujuan menjaga, kaidah bahasa Indonesia baku
+
+
+
+[Masalah Penelitian]
+
+Perubahan praktik literasi bahasa Indonesia akibat perkembangan teknologi digital yang menimbulkan dampak positif, negatif, dan berbagai tantangan literasi.
+
+
+
+[Domain/Topik]
+
+Pendidikan bahasa / Literasi digital
+
+
+
+[Metodologi/Pendekatan]
+
+Pendekatan kualitatif dengan metode studi literatur dan analisis deskriptif kualitatif.
+
+
+
+[Dataset/Sumber Data]
+
+Artikel jurnal ilmiah nasional yang relevan.
+
+
+
+[Metrik Evaluasi]
+
+Tidak disebutkan.
+
+
+
+[Hasil/Temuan Utama]
+
+- Teknologi digital meningkatkan minat baca, keterampilan membaca dan menulis, serta literasi multimodal.
+
+- Teknologi digital memunculkan penggunaan bahasa informal, bahasa gaul, dan alih kode berlebihan yang dapat melemahkan kaidah bahasa baku.
+
+- Tantangan literasi meliputi rendahnya minat baca, penyebaran hoaks, lemahnya etika komunikasi digital, dan ketimpangan akses teknologi.
+
+- Diperlukan strategi pendidikan dan kebijakan bahasa yang integratif, adaptif, dan berkelanjutan untuk menyeimbangkan teknologi dan kaidah bahasa baku.
