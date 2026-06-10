@@ -2,7 +2,7 @@
 
 SYNTAG is an automated framework for generating synthetic text datasets and corresponding knowledge graphs in Indonesian. The framework supports multiple text types, including news articles, paper abstracts, and social media posts (tweets).
 
-The framework consists of two main stages:
+The framework consists of three main stages:
 
 ## 1. Synthetic Data Generation
 
@@ -18,30 +18,6 @@ For each text type, the framework performs the following steps:
 4. Parse the model response and extract the generated JSON data.
 5. Save a checkpoint to record the current generation progress.
 6. Store the generated data in a JSON file.
-
-### Design Features
-
-The data generation pipeline incorporates several reliability and efficiency mechanisms:
-
-#### 1. Checkpointing
-
-Each successfully generated batch is immediately saved to disk. If the generation process is interrupted (e.g., internet connectivity issues, API failures, or manual termination), the program can be restarted and will continue from the last saved checkpoint.
-
-#### 2. Batch Generation
-
-Instead of generating a single data instance per request, the framework generates multiple instances in a single API call, reducing the number of requests and improving overall efficiency.
-
-#### 3. Exponential Backoff
-
-When rate-limit errors (e.g., HTTP 429) or temporary failures occur, the framework automatically retries the request using an exponential backoff strategy. A small random delay (jitter) is added to prevent synchronized retries.
-
-#### 4. Request Delay
-
-A configurable delay is applied between successful requests to reduce the likelihood of hitting API rate limits.
-
-#### 5. Flexible JSON Parsing
-
-Since LLM responses may occasionally include additional text before or after the expected JSON output, the parser automatically extracts and validates only the JSON content.
 
 ### How to Run
 
