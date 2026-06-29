@@ -17,15 +17,17 @@ load_dotenv()
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 MODEL        = "openai/gpt-oss-120b" 
+BASE_URL     = "https://api.groq.com/openai/v1/chat/completions"
 
 # Code testing ────────────────────────────────
 # TARGET_PER_TYPE = 15       
 # BATCH_SIZE      = 3 
 # ───────────────────────────────────────────── 
 
-TARGET_PER_TYPE = 1070      
-BATCH_SIZE      = 5      
-OUTPUT_DIR      = Path("synthetic_output")
+TARGET_PER_TYPE = 5      
+BATCH_SIZE      = 5  
+ROOT_DIR        = Path(__file__).resolve().parent
+OUTPUT_DIR      = ROOT_DIR / "synthetic_output"
 CHECKPOINT_DIR  = OUTPUT_DIR / "checkpoints"
 MAX_RETRIES     = 8
 BASE_DELAY      = 2.0      
@@ -260,13 +262,12 @@ def save_checkpoint(data_type: str, data: list):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def call_groq_api(system_prompt: str, user_prompt: str) -> str:
+def call_llm_api(system_prompt: str, user_prompt: str) -> str:
     """
     Call Groq API with exponential backoff for rate limit
 
     Return: response model
     """
-    url     = "https://api.groq.com/openai/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {GROQ_API_KEY}",
         "Content-Type":  "application/json"
@@ -285,7 +286,7 @@ def call_groq_api(system_prompt: str, user_prompt: str) -> str:
     delay = BASE_DELAY
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.post(url, headers=headers, json=payload, timeout=60)
+            resp = requests.post(BASE_URL, headers=headers, json=payload, timeout=60)
 
             # ── Rate limit (429) ──────────────────────────
             if resp.status_code == 429:
@@ -390,7 +391,7 @@ def generate_data(data_type: str, target: int = TARGET_PER_TYPE) -> list:
             user_prompt = build_user_prompt(data_type, batch_n, start_id, batch_index)
 
             try:
-                raw   = call_groq_api(prompt_cfg["system"], user_prompt)
+                raw   = call_llm_api(prompt_cfg["system"], user_prompt)
                 batch = parse_json_response(raw)
 
                 for i, item in enumerate(batch):
